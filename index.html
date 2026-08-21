@@ -21,6 +21,16 @@ input,select,textarea{font:inherit;outline:none}
 .ph{width:100%;max-width:400px;height:min(860px,calc(100dvh - 20px));background:#fff;border-radius:20px;
  overflow:hidden;position:relative;display:flex;flex-direction:column;box-shadow:0 16px 46px rgba(0,0,0,.5)}
 .ph.land{max-width:920px}
+/* 통화 중: 폰을 세로로 들고 있어도 화면만 90도 돌려 가로로 표시 */
+@media (orientation:portrait){
+  body.landmode{overflow:hidden}
+  body.landmode .ph.land{
+    position:fixed;top:50%;left:50%;
+    width:100dvh;height:100dvw;max-width:none;
+    transform:translate(-50%,-50%) rotate(90deg);
+    transform-origin:center center;
+    border-radius:0;box-shadow:none;z-index:400}
+}
 .hide{display:none!important}
 .bar{flex:0 0 auto;background:#fff;color:#4A4A52;font-size:10.5px;padding:4px 12px;display:flex;justify-content:space-between}
 .bar.dk{background:#000;color:#9C9CA6}
@@ -553,9 +563,18 @@ function callDoc(nm,hp){
 function cancelRing(){clearInterval(ST.ring);$('ring').classList.remove('on');drawHome();toast('의료지도 요청을 취소했습니다.');}
 
 /* ══════ 화상통화 ══════ */
+/* 가로 전환: 기기 회전 잠금이 가능하면 실제로 눕히고, 안 되면 화면을 CSS로 90도 돌린다 */
+async function goLand(){
+  document.body.classList.add('landmode');
+  try{ if(screen.orientation&&screen.orientation.lock) await screen.orientation.lock('landscape'); }catch(e){}
+}
+function exitLand(){
+  document.body.classList.remove('landmode');
+  try{ if(screen.orientation&&screen.orientation.unlock) screen.orientation.unlock(); }catch(e){}
+}
 function connect(){
   clearInterval(ST.ring);$('ring').classList.remove('on');
-  $('ph').classList.add('land');$('bar').classList.add('dk');$('call').classList.add('on');
+  $('ph').classList.add('land');$('bar').classList.add('dk');$('call').classList.add('on');goLand();
   const p=ST.cur;p.stt='지도 중';p.docLog=p.docLog||'미제출';
   p.tr=[];p.chat=[{sys:'구급대원님이 입장하셨습니다.'},{sys:'지도의사님이 입장하셨습니다.'}];
   ST.t0=Date.now();addLog('통화 시작');
@@ -571,7 +590,7 @@ function endCall(){
   const s=Math.floor((Date.now()-ST.t0)/1000);
   const dur=p2(Math.floor(s/3600))+':'+p2(Math.floor(s/60)%60)+':'+p2(s%60);
   ST.cur.calls.push({at:new Date(),dur,doc:ST.cur.doc+'의사'});
-  $('call').classList.remove('on');$('ph').classList.remove('land');$('bar').classList.remove('dk');
+  $('call').classList.remove('on');$('ph').classList.remove('land');$('bar').classList.remove('dk');exitLand();
   go('home');
   pop('통화 종료',`통화 시간 ${dur}\n\n입력한 현장처치기록은 기록 보기 → 현장 처치 기록 / ${ST.cur.dz}기록지에서 확인할 수 있습니다.`,
     [['기록지 작성',()=>{popClose();openRec(ST.cur.id);RTAB='sheet';drawRec();}],['닫기',popClose,1]]);
