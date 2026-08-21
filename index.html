@@ -34,7 +34,7 @@ input,select,textarea{font:inherit;outline:none}
 .hide{display:none!important}
 .bar{flex:0 0 auto;background:#fff;color:#4A4A52;font-size:10.5px;padding:4px 12px;display:flex;justify-content:space-between}
 .bar.dk{background:#000;color:#9C9CA6}
-.chipT{position:absolute;right:9px;top:22px;z-index:300;background:rgba(228,3,46,.85);color:#fff;font-size:9.5px;
+.chipT{position:absolute;right:62px;top:9px;z-index:300;background:rgba(228,3,46,.85);color:#fff;font-size:9.5px;
  font-weight:700;padding:2px 6px;border-radius:8px}
 
 /* 헤더 */
@@ -230,21 +230,45 @@ video{width:100%;height:100%;object-fit:cover;display:block}
 .caps img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
 
 /* 기록지 */
-.doc9{padding:11px;background:#fff;min-height:100%}
-.d9h{font-size:12.5px;font-weight:800;margin-bottom:9px}
-.d9s{font-size:11.5px;font-weight:800;color:#33333A;margin:12px 0 6px;padding-left:5px;border-left:3px solid var(--red)}
-.fr{display:flex;align-items:center;gap:7px;margin-bottom:6px}
-.fr label{flex:0 0 84px;font-size:11px;color:var(--sub);line-height:1.3}
-.fr label em{color:var(--red);font-style:normal}
-.fr .v{flex:1;min-width:0}
-.fr input,.fr select{width:100%;border:1px solid var(--line2);border-radius:3px;padding:6px 7px;font-size:12px;background:#fff}
-.fr.miss input,.fr.miss select{border-color:var(--red);background:#FFF4F6}
-.sg{display:flex;gap:4px;flex-wrap:wrap}
-.sg button{border:1px solid var(--line2);border-radius:3px;padding:5px 9px;font-size:11.5px;background:#fff}
-.sg button.on{background:#54545C;color:#fff;border-color:#54545C;font-weight:700}
+.doc9{padding:10px;background:#fff;min-height:100%}
+.d9h{font-size:12.5px;font-weight:800;margin-bottom:9px;display:flex;align-items:baseline;gap:6px}
+.d9v{font-weight:400;font-size:10.5px;color:var(--sub);margin-left:auto}
+.d9s2{font-size:11.5px;font-weight:700;background:#EDEEF2;border:1px solid var(--line);
+ border-bottom:0;padding:4px 9px;margin:12px 0 0;display:inline-block;border-radius:2px 2px 0 0}
+.d9n{font-size:9.5px;color:var(--sub);line-height:1.5;margin:1px 0 4px}
+.frw{display:flex;flex-wrap:wrap;align-items:center;gap:4px 5px;margin:5px 0}
+.fl{font-size:11px;color:#3A3A42;line-height:1.35}
+.fl.req{color:#17171B}
+.rq{color:var(--red);font-size:11px;margin-left:1px}
+.fi input{border:0;border-bottom:1px solid var(--line2);border-radius:0;padding:3px 4px;
+ font-size:11.5px;background:#fff;text-align:center;max-width:100%}
+.fi.miss input{border-color:var(--red);background:#FFF4F6}
+.fck{width:17px;height:17px;border:1px solid var(--line2);border-radius:2px;display:inline-block;
+ position:relative;background:#fff}
+.fck.on::after{content:'✓';position:absolute;inset:0;display:grid;place-items:center;
+ font-size:12px;color:var(--red);font-weight:800}
+.sg2{display:inline-flex;flex-wrap:wrap;gap:3px}
+.sg2 button{border:1px solid var(--line2);border-radius:2px;padding:4px 8px;font-size:10.5px;
+ background:#fff;color:#3A3A42;line-height:1.25}
+.sg2 button.on{background:#54545C;color:#fff;border-color:#54545C;font-weight:600}
+.sg2.miss button{border-color:var(--red)}
 .tbl{width:100%;border-collapse:collapse;font-size:10px}
 .tbl th,.tbl td{border:1px solid var(--line2);padding:3px 4px;text-align:center}
 .tbl th{background:#F1F2F6;font-weight:700}
+/* 시간별 상황기록 격자 */
+.d9g{font-size:9.5px;font-weight:700;text-align:center;line-height:1.4;margin-bottom:6px}
+.gzoom{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--sub);margin-bottom:5px}
+.gzoom button{border:1px solid var(--line2);border-radius:3px;padding:3px 9px;font-size:11px;background:#fff}
+.gwrap{overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line2);max-height:62vh}
+.grid{border-collapse:collapse;white-space:nowrap}
+.grid th,.grid td{border:1px solid var(--line2);padding:1px 2px;text-align:center;font-weight:400}
+.grid th{background:#EDEEF3;font-weight:700;position:sticky;top:0;z-index:2;vertical-align:bottom}
+.grid th.gm{background:#DFE0E7;position:sticky;left:0;z-index:3}
+.grid tbody th.gm,.grid tr>th.gm{min-width:22px}
+.gv{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;padding:2px 0;display:inline-block}
+.grid td.gc{background:#fff;color:#A8A8B0;cursor:pointer;user-select:none;-webkit-user-select:none;min-width:26px}
+.grid td.gc.on{background:#4A4A52;color:#fff;font-weight:700}
+.grid .gi{width:30px;border:0;text-align:center;font-size:inherit;background:none;padding:1px}
 .pager{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:9px;padding:8px;
  border-top:1px solid var(--line);background:#fff;padding-bottom:calc(8px + env(safe-area-inset-bottom))}
 .pager button{color:var(--blue);font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:3px}
@@ -450,13 +474,13 @@ const HOSP=[['장수한마음병원','지역응급의료기관','장수군 장�
 const now=Date.now();
 let PT=[
  {id:1,nm:'이◯진',age:'40대',sex:'남',dz:'심정지',doc:'',at:new Date(now-9e5),stt:'출동 중',
-  docLog:'',emtLog:'',trans:'현장',hosp:'',tr:[],calls:[],caps:[],chat:[],sheet:{},sub:false},
+  docLog:'',emtLog:'',trans:'현장',hosp:'',tr:[],calls:[],caps:[],chat:[],sheet:{},grid:{},sub:false},
  {id:2,nm:'홍*동',age:'50대',sex:'남',dz:'심정지',doc:'테스트6',at:new Date(now-18e5),stt:'지도 중',
-  docLog:'미제출',emtLog:'미제출',trans:'현장',hosp:'',tr:[],calls:[{at:new Date(now-18e5),dur:'00:02:11',doc:'정◯인의사'}],caps:[],chat:[],sheet:{},sub:false},
+  docLog:'미제출',emtLog:'미제출',trans:'현장',hosp:'',tr:[],calls:[{at:new Date(now-18e5),dur:'00:02:11',doc:'정◯인의사'}],caps:[],chat:[],sheet:{},grid:{},sub:false},
  {id:3,nm:'무*',age:'-',sex:'남',dz:'심정지',doc:'테스트6',at:new Date(now-36e5),stt:'이송완료',
-  docLog:'미제출',emtLog:'미제출',trans:'이송완료',hosp:'전북대학교병원',tr:[],calls:[],caps:[],chat:[],sheet:{},sub:false},
+  docLog:'미제출',emtLog:'미제출',trans:'이송완료',hosp:'전북대학교병원',tr:[],calls:[],caps:[],chat:[],sheet:{},grid:{},sub:false},
  {id:4,nm:'무*',age:'30대',sex:'남',dz:'심정지',doc:'테스트6',at:new Date(now-54e5),stt:'최종완료',
-  docLog:'제출완료(테스트6)',emtLog:'미제출',trans:'이송완료',hosp:'예수병원',tr:[],calls:[],caps:[],chat:[],sheet:{},sub:false}];
+  docLog:'제출완료(테스트6)',emtLog:'미제출',trans:'이송완료',hosp:'예수병원',tr:[],calls:[],caps:[],chat:[],sheet:{},grid:{},sub:false}];
 
 const STT={'출동 중':['🚨','o'],'지도 중':['☢',''],'이송완료':['🚑','g'],'최종완료':['📋','y']};
 
@@ -517,7 +541,7 @@ function openNewFor(id){const p=PT.find(x=>x.id===id);ALERTED=p;
   $('veil').classList.add('on');$('newsh').classList.add('on');}
 function closeNew(){$('newsh').classList.remove('on');$('veil').classList.remove('on');}
 function mkPatient(stt){return{id:Date.now(),nm:$('fname').value.trim()||'무명',age:ST.age,sex:ST.sex[0],dz:ST.dz,
-  doc:'',at:new Date(),stt,docLog:'',emtLog:'',trans:'현장',hosp:'',tr:[],calls:[],caps:[],chat:[],sheet:{},sub:false};}
+  doc:'',at:new Date(),stt,docLog:'',emtLog:'',trans:'현장',hosp:'',tr:[],calls:[],caps:[],chat:[],sheet:{},grid:{},sub:false};}
 function alertBtn(){
   if(ALERTED){confirmPop('출동 취소','전송한 출동 알림을 취소하시겠습니까?',()=>{
       PT=PT.filter(x=>x!==ALERTED);ALERTED=null;closeNew();drawHome();toast('출동 알림을 취소했습니다.');});return;}
@@ -802,92 +826,311 @@ function drawRec(){
   openSub('기록 보기',html,tabs,foot,act);
 }
 
-/* 기록지 정의 */
+/* 기록지 정의 — 실제 앱 화면 구조 (심정지 9페이지)
+   토큰: ['sec',제목] ['t',글자] ['n',작은글자] ['i',키,폭,필수] ['s',키,[선택지],필수] ['c',키,라벨] ['grid',0|1] */
 const PAGES={
  '심정지':[
-  ['기본 정보',[['serial','구급활동 일련번호','t',1],['dis','구급활동 재난번호','t'],['first','선착대','t'],
-    ['second','후착대','t'],['pnm','환자이름','t'],['page','환자나이','t'],
-    ['psex','환자성별','s',['남','여'],1],['ktas','pre-KTAS','s',['Level 1','Level 2','Level 3','Level 4','Level 5']]]],
-  ['현장 도착 전',[['pre','현장도착 전 지도의사 상담','s',['지도요청','시도 안함','영상'],1],
-    ['fail','도착 전 연결 실패 사유','s',['해당없음','통화권 이탈','미응답','기타']],
-    ['tries','전화 시도 횟수','t'],['fdoc','현장 지도의사','t',1]]],
-  ['심정지 정보',[['wit','심정지 목격','s',['목격','비목격','미상'],1],['witby','목격자','s',['가족','일반인','구급대','의료인']],
-    ['cpr','일반인 심폐소생술','s',['시행','미시행'],1],['rhy','초기 심전도 리듬','s',['VF','pVT','PEA','Asystole'],1]]],
-  ['기도유지 · 호흡',[['air','기도유지 술기','s',['i-gel','LT','기관삽관','BVM only'],1],
-    ['airn','시도 횟수','t'],['airok','성공 여부','s',['성공','실패']],['etco2','ETCO2 측정','s',['시행','미시행']]]],
-  ['순환 · 제세동',[['defn','제세동 횟수','t',1],['deft','최초 제세동 시각','t'],
-    ['iv','정맥로 확보','s',['성공','실패','시도 안함'],1],['ivsite','확보 부위','s',['좌완','우완','경골(IO)','상완(IO)']]]],
-  ['약물 투여',[['epi','Epinephrine 투여 횟수','t',1],['amio','Amiodarone','s',['투여','미투여']],
-    ['lido','Lidocaine','s',['투여','미투여']],['etc','기타 약물','t']]],
-  ['ROSC · 이송',[['rosc','현장 ROSC','s',['있음','없음'],1],['rearr','Re-Arrest','s',['있음','없음'],1],
-    ['hosp','이송 병원','t',1],['stop','이송·중단 사유','s',['해당없음','비심장성(추정)','의사 병원지시','재열','유보']]]],
-  ['시간별 상황기록',null],
-  ['확인 및 제출',[['writer','작성자','t',1],['chk','내용 확인','s',['확인함'],1]]]],
+  ['기본 정보',[
+    [['t','● 신고일'],['i','rday',108],['t','시'],['i','rhh',34],['t','분 (24시간제)'],['i','rmm',34]],
+    [['t','● 구급일지 재난번호'],['i','dis',170]],
+    [['t','● 구급일지 일련번호'],['i','serial',170,1]],
+    [['sec','기본 정보']],
+    [['t','선착대'],['i','first',96],['t','후착대'],['i','second',96]],
+    [['t','환자이름'],['i','pnm',96],['t','환자나이'],['i','page',96]],
+    [['t','환자성별'],['s','psex',['남','여']]],
+    [['t','pre-KTAS'],['s','ktas',['Level 1','Level 2','Level 3','Level 4','Level 5']]],
+    [['t','＊ 현장도착 전 지도의사 알림시도'],['s','pre',['시도함','시도안(못)함'],1]],
+    [['s','prefail',['도착전 연결실패','완전연결실패']],['t','전화시도횟수:'],['i','tries',34],['t','회']],
+    [['s','prepost',['도착전','도착 후']],['t','연결함 → 연결된 지도의사'],['i','fdoc',96]],
+    [['t','＊ 이송/중단 이유:'],['s','stop',['보호자거부(부재)','유보','비심장성(흡인, 외상) 등',
+      '의사병원처치필요판단','IV 실패','소생안됨','ROSC','연결실패'],1]]
+  ]],
+  ['보호자 · 증례 요약',[
+    [['t','보호자 수'],['i','gnum',60]],
+    [['t','동의한 또는 주요 보호자 연령대:'],['i','gage',60]],
+    [['t','환자와의 관계:'],['i','grel',140]],
+    [['t','보호자와의 소통'],['s','gcom',['원활','비원활']]],
+    [['t','민원 발생 가능성:'],['s','claim',['없음','있음']],['s','claimlv',['상','중','하']]],
+    [['n','→ 있음 클릭 시 지도자에게 연락']],
+    [['sec','증례 요약']],
+    [['t','＊ 심정지 목격'],['s','wit',['함','목격 못함'],1],['s','witk',['봄','들음']]],
+    [['t','평소CPC'],['i','cpc',60]],
+    [['t','＊ 초기리듬'],['s','rhy',['무수축','PEA','VF','VT'],1]],
+    [['t','신고 후 부터 ('],['i','t1',44],['t',')분 후 첫 구급대 가슴압박 시작하였고,']],
+    [['t','현장 CPR ('],['i','t2',44],['t',')분 시행 후']],
+    [['t','＊ 한번이라도 ROSC'],['s','rosc',['됨','안됨'],1]],
+    [['t','('],['i','hosp',180],['t',') 병원으로 이송']]
+  ]],
+  ['병원 전 ROSC · 현장도착',[
+    [['t','병원 전 ROSC'],['c','preros','']],
+    [['t','ROSC직후혈압 /'],['i','rbp1',60],['t','/'],['i','rbp2',60],['t','맥박'],['i','rhr',60],['t','회']],
+    [['t','SpO2'],['i','rspo',60]],
+    [['t','의식'],['s','avpu',['A','V','P','U','irritable /confused']]],
+    [['t','('],['i','fl1',44],['t',')층 건물 ('],['i','fl2',44],['t',')층 에서 발생']],
+    [['t','('],['s','acc',['엘리베이터','계단']],['t',')으로 접근']],
+    [['sec','현장도착']],
+    [['t','＊ 상황실에 심정지 인지 여부:'],['s','dispatch',['인지함','출동 중 인지','안됨'],1]],
+    [['t','상황요원 지시하 CPR:'],['s','dcpr',['시행함','안함','지시했으나 못함']]],
+    [['t','목격자 발견시 환자 헐떡거림(Gasping):'],['s','gasp',['있음','없음']]],
+    [['t','목격자 CPR 품질:'],['s','bqual',['상','중','하']]],
+    [['t','목격자 연령대:'],['i','bage',60]],
+    [['t','현장의 보호자(목격자) AED 사용 여부:'],['s','aed',['사용함','안함']]],
+    [['t','구급대원 현장 도착 이후 부착 제세동기 :'],['s','defmode',['자동','수동']]],
+    [['t','강직여부 입벌리기(1h), 머리 숙여보기(2h) 시행 :'],['s','rigid',['시행함','안함']]]
+  ]],
+  ['Airway',[
+    [['sec','Airway']],
+    [['t','＊ 종류 :'],['s','air',['i-gel','LT','LMA','삽관 필요 없음'],1]],
+    [['t','성공까지 시도 횟수:'],['i','airn',44],['t','회 /'],['s','airno',['시행불가']]],
+    [['t','튜브 끝이'],['s','tube',['5cm 만 남도록 넣음','5cm 이상 남음']]],
+    [['t','튜브 삽입 후 \u0027정진/가슴상승\u0027 확인:'],['s','tchk',['함','안함']]],
+    [['t','삽입 도중'],['s','stuck',['걸림','안걸림']]],
+    [['t','→ TCE＊:'],['s','tce',['함','안함','필요없음']]],
+    [['n','＊TCE - Thyroid cartilage elevation techique  갑상연골 들어올리기 방법']],
+    [['t','Anti-aerosol procedure 시행여부']],
+    [['s','aero',['환자 얼굴 천으로 가리기','시술자 face shield 사용']]],
+    [['t','HEPA filter 사용'],['s','hepa',['사용함','안함']]],
+    [['t','산소공급 중단 여부(산소통 소진 등)'],['s','o2',['중단됨','중단안됨']]],
+    [['t','과환기 방지("10회 압박당 1회 환기")'],['s','hyper',['수행함','안함']]],
+    [['t','기관 내 삽관(ET) 시도'],['s','et',['함','안함']],['t','//'],['s','etok',['성공','실패']]],
+    [['t','성공까지 시도 횟수:'],['i','etn',44],['t','회 //  시행자'],['i','etby',110]]
+  ]],
+  ['IV · 가슴압박/제세동',[
+    [['sec','IV']],
+    [['s','ivtype',['IV','IO']],['t','→ ＊ IV/IO 확보'],['s','iv',['성공','실패','시도 필요 없음'],1]],
+    [['t','출동 당시 IO 장비가 준비되었음'],['s','ioready',['준비됨','준비안됨']]],
+    [['t','도착-IV 성공 소요 시간'],['i','ivt',60]],
+    [['t','시도 횟수:'],['i','ivn',44],['t','회 //']],
+    [['t','시행자 ('],['s','ivwho',['선착','후착']],['t',')'],['i','ivby',110]],
+    [['sec','가슴압박/제세동']],
+    [['t','가슴압박 주 시행자:'],['s','cprby',['1급,간호사','1급외']]],
+    [['t','교대:'],['s','swap',['(초기) 4분동안 2분마다 다른 대원으로 압박 교대',
+      '(초기) 4분간 압박교대 시행 안하고 가슴압박 시행함']]],
+    [['t','"가슴압박 깊고, 강하고, 빠르게"'],['s','deep',['지시함','안함']]],
+    [['t','메트로놈'],['s','metro',['켬','안 켬']],['t','ETCO2'],['s','etco2',['사용함','사용안함']]],
+    [['t','총 제세동 횟수'],['i','defn',60],['t','회']]
+  ]],
+  ['Re-arrest · 이송 · 기타술기',[
+    [['sec','Re-arrest']],
+    [['t','＊ Rearrest 발생'],['s','rearr',['함','안함'],1]],
+    [['t','→ \u0027함\u0027인 경우 ('],['s','reloc',['현장','계단','엘리베이터','구급차']],['t',')']],
+    [['t','Rearrest 횟수'],['i','ren',60],['t','회']],
+    [['t','시간(24시간제)'],['i','rehh',34],['t','시'],['i','remm',34],['t','분 (또는 ROSC'],['i','reaft',44],['t','분 후)']],
+    [['t','추가발생 reA 기록'],['i','remo',180]],
+    [['sec','이송']],
+    [['t','이송 시 엘리베이터 사용'],['s','elev',['함','안함']]],
+    [['t','엘리베이터 내 환자 자세'],['s','elevp',['함','안함']]],
+    [['sec','기타술기']],
+    [['t','기계CPR'],['s','mcpr',['함','안함']]],
+    [['t','Head up CPR'],['s','hcpr',['함','안함']]],
+    [['t','DS Def b＊＊'],['s','dsd',['함','안함']]],
+    [['n','＊＊DS Def b - Double Sequence defibrillation 제세동기 두개를 연속으로 사용하는 방법']],
+    [['t','Refractory VF 발생(3차례 이상 VF 발생)'],['s','rvf',['함','안함']]],
+    [['t','Refractory VF 시'],['s','rvfa',['AL로 유지','AP로 교체','DSD 시행']]]
+  ]],
+  ['팀원 · 개인정보동의서',[
+    [['sec','선착대 팀원']],
+    [['t','＊ 선착대 팀원 이름:'],['i','m1',150,1]],
+    [['t','＊ 선착대 팀원 이름:'],['i','m2',150,1]],
+    [['t','이름:'],['i','m3',150]],
+    [['sec','후착대 팀원']],
+    [['t','이름:'],['i','m4',150]],
+    [['t','이름:'],['i','m5',150]],
+    [['t','이름:'],['i','m6',150]],
+    [['sec','개인정보동의서 수령 여부']],
+    [['t','개인정보동의서 수령함'],['c','pinfo','']]
+  ]],
+  ['시간별 상황기록 1/2',[[['grid',0]]]],
+  ['시간별 상황기록 2/2',[[['grid',1]]]]
+ ],
  '심근경색':[
-  ['기본 정보',[['serial','구급활동 일련번호','t',1],['dis','구급활동 재난번호','t'],['first','선착대','t'],
-    ['pnm','환자이름','t'],['page','환자나이','t'],['psex','환자성별','s',['남','여'],1],
-    ['ktas','pre-KTAS','s',['Level 1','Level 2','Level 3','Level 4','Level 5']]]],
-  ['현장 도착 전',[['pre','현장도착 전 지도의사 상담','s',['지도요청','시도 안함','영상'],1],['fdoc','현장 지도의사','t',1]]],
-  ['증상 · 평가',[['onset','증상 발생 시각','t',1],['nrs','흉통 NRS','t'],
-    ['sym','동반 증상','s',['호흡곤란','발한','오심','없음']]]],
-  ['12-Lead',[['ecg','12-Lead 시행','s',['시행','미시행'],1],['send','전송 여부','s',['전송','미전송'],1],
-    ['stemi','STEMI 의심','s',['예','아니오'],1]]],
-  ['처치 · 약물',[['asp','Aspirin','s',['투여','미투여'],1],['ntg','NTG 설하','s',['투여','미투여']],
-    ['iv','정맥로 확보','s',['성공','실패','시도 안함'],1],['hosp','이송 병원(PCI 가능)','t',1]]],
-  ['시간별 상황기록',null],
-  ['확인 및 제출',[['writer','작성자','t',1],['chk','내용 확인','s',['확인함'],1]]]],
+  ['기본 정보',[
+    [['t','● 신고일'],['i','rday',108],['t','시'],['i','rhh',34],['t','분 (24시간제)'],['i','rmm',34]],
+    [['t','● 구급일지 재난번호'],['i','dis',170]],
+    [['t','● 구급일지 일련번호'],['i','serial',170,1]],
+    [['sec','기본 정보']],
+    [['t','선착대'],['i','first',96],['t','후착대'],['i','second',96]],
+    [['t','환자이름'],['i','pnm',96],['t','환자나이'],['i','page',96]],
+    [['t','환자성별'],['s','psex',['남','여']]],
+    [['t','pre-KTAS'],['s','ktas',['Level 1','Level 2','Level 3','Level 4','Level 5']]],
+    [['t','＊ 현장도착 전 지도의사 알림시도'],['s','pre',['시도함','시도안(못)함'],1]],
+    [['t','연결된 지도의사'],['i','fdoc',110]]
+  ]],
+  ['증상 · 평가',[
+    [['t','＊ 증상 발생 시각'],['i','onset',110,1]],
+    [['t','흉통 NRS'],['i','nrs',60]],
+    [['t','동반 증상'],['s','sym',['호흡곤란','발한','오심','없음']]],
+    [['t','＊ 12-Lead 시행'],['s','ecg',['시행','미시행'],1]],
+    [['t','＊ 전송 여부'],['s','send',['전송','미전송'],1]],
+    [['t','＊ STEMI 의심'],['s','stemi',['예','아니오'],1]]
+  ]],
+  ['처치 · 이송',[
+    [['t','＊ Aspirin'],['s','asp',['투여','미투여'],1]],
+    [['t','NTG 설하'],['s','ntg',['투여','미투여']]],
+    [['t','＊ 정맥로 확보'],['s','iv',['성공','실패','시도 필요 없음'],1]],
+    [['t','＊ 이송 병원(PCI 가능)'],['i','hosp',180,1]]
+  ]],
+  ['팀원 · 개인정보동의서',[
+    [['sec','선착대 팀원']],
+    [['t','＊ 선착대 팀원 이름:'],['i','m1',150,1]],
+    [['t','＊ 선착대 팀원 이름:'],['i','m2',150,1]],
+    [['sec','개인정보동의서 수령 여부']],
+    [['t','개인정보동의서 수령함'],['c','pinfo','']]
+  ]],
+  ['시간별 상황기록 1/2',[[['grid',0]]]],
+  ['시간별 상황기록 2/2',[[['grid',1]]]]
+ ],
  '분만':[
-  ['기본 정보',[['serial','구급활동 일련번호','t',1],['dis','구급활동 재난번호','t'],['first','선착대','t'],
-    ['pnm','산모 이름','t'],['page','산모 나이','t'],['ktas','pre-KTAS','s',['Level 1','Level 2','Level 3','Level 4','Level 5']]]],
-  ['현장 도착 전',[['pre','현장도착 전 지도의사 상담','s',['지도요청','시도 안함','영상'],1],['fdoc','현장 지도의사','t',1]]],
-  ['산과력',[['gest','임신 주수','t',1],['para','분만력','s',['초산','경산'],1],['gap','진통 간격(분)','t'],
-    ['blood','질 출혈','s',['있음','없음']]]],
-  ['분만',[['rup','양막 파열','s',['있음','없음'],1],['deliv','현장 분만','s',['시행','미시행'],1],
-    ['cord','제대 결찰','s',['시행','미시행']],['plac','태반 만출','s',['있음','없음']]]],
-  ['신생아',[['ap1','Apgar 1분','t',1],['ap5','Apgar 5분','t'],
-    ['care','신생아 처치','s',['보온','기도흡인','자극','양압환기'],1],['hosp','이송 병원','t',1]]],
-  ['시간별 상황기록',null],
-  ['확인 및 제출',[['writer','작성자','t',1],['chk','내용 확인','s',['확인함'],1]]]]};
+  ['기본 정보',[
+    [['t','● 신고일'],['i','rday',108],['t','시'],['i','rhh',34],['t','분 (24시간제)'],['i','rmm',34]],
+    [['t','● 구급일지 재난번호'],['i','dis',170]],
+    [['t','● 구급일지 일련번호'],['i','serial',170,1]],
+    [['sec','기본 정보']],
+    [['t','선착대'],['i','first',96],['t','후착대'],['i','second',96]],
+    [['t','산모 이름'],['i','pnm',96],['t','산모 나이'],['i','page',96]],
+    [['t','pre-KTAS'],['s','ktas',['Level 1','Level 2','Level 3','Level 4','Level 5']]],
+    [['t','＊ 현장도착 전 지도의사 알림시도'],['s','pre',['시도함','시도안(못)함'],1]],
+    [['t','연결된 지도의사'],['i','fdoc',110]]
+  ]],
+  ['산과력 · 분만',[
+    [['t','＊ 임신 주수'],['i','gest',60,1]],
+    [['t','＊ 분만력'],['s','para',['초산','경산'],1]],
+    [['t','진통 간격(분)'],['i','gap',60]],
+    [['t','질 출혈'],['s','blood',['있음','없음']]],
+    [['t','＊ 양막 파열'],['s','rup',['있음','없음'],1]],
+    [['t','＊ 현장 분만'],['s','deliv',['시행','미시행'],1]],
+    [['t','제대 결찰'],['s','cord',['시행','미시행']]],
+    [['t','태반 만출'],['s','plac',['있음','없음']]]
+  ]],
+  ['신생아 · 이송',[
+    [['t','＊ Apgar 1분'],['i','ap1',60,1]],
+    [['t','Apgar 5분'],['i','ap5',60]],
+    [['t','＊ 신생아 처치'],['s','care',['보온','기도흡인','자극','양압환기'],1]],
+    [['t','＊ 이송 병원'],['i','hosp',180,1]]
+  ]],
+  ['팀원 · 개인정보동의서',[
+    [['sec','선착대 팀원']],
+    [['t','＊ 선착대 팀원 이름:'],['i','m1',150,1]],
+    [['t','＊ 선착대 팀원 이름:'],['i','m2',150,1]],
+    [['sec','개인정보동의서 수령 여부']],
+    [['t','개인정보동의서 수령함'],['c','pinfo','']]
+  ]],
+  ['시간별 상황기록 1/2',[[['grid',0]]]],
+  ['시간별 상황기록 2/2',[[['grid',1]]]]
+ ]};
 
+/* 페이지 렌더 */
 function sheetPage(p,n){
-  const [title,fields]=PAGES[p.dz][n-1];
-  let inner;
-  if(!fields){
-    const rows=p.tr.filter(t=>!t.sys);
-    inner=`<div class="d9s">시간별 상황기록 <span style="font-weight:400;color:var(--sub)">(통화 중 입력분 자동 반영)</span></div>
-      <table class="tbl"><tr><th style="width:52px">시각</th><th>항목</th><th style="width:74px">값</th></tr>
-      ${rows.length?rows.map(t=>`<tr><td>${t.full}</td><td>${esc(t.k)}</td><td>${esc(t.v||'')}</td></tr>`).join('')
-        :'<tr><td colspan="3" style="padding:14px;color:var(--sub)">입력된 현장처치기록이 없습니다.</td></tr>'}</table>`;
-  }else{
-    inner=`<div class="d9s">${title}</div>`+fields.map(f=>{
-      const v=p.sheet[f[0]]||'';
-      const req=f[3]===1||f[4]===1;
-      if(f[2]==='s')return `<div class="fr" id="fr-${f[0]}"><label>${f[1]}${req?'<em>*</em>':''}</label>
-        <div class="v"><div class="sg">${f[3].map(o=>
-          `<button class="${v===o?'on':''}" onclick="setF('${f[0]}','${o}')">${o}</button>`).join('')}</div></div></div>`;
-      return `<div class="fr" id="fr-${f[0]}"><label>${f[1]}${req?'<em>*</em>':''}</label>
-        <div class="v"><input value="${esc(v)}" ${p.sub?'disabled':''} oninput="ST.cur.sheet['${f[0]}']=this.value"></div></div>`;
-    }).join('');
-  }
-  return `<div class="doc9"><div class="d9h">스마트의료지도 구급대원 ${p.dz} 기록지 <span style="font-weight:400;color:var(--sub)">Ver 6.7</span></div>
-    <div class="fr"><label>신고일</label><div class="v"><input value="${ymd(p.at)} ${hm(p.at)}" disabled></div></div>
-    ${inner}</div>`;
+  const [title,rows]=PAGES[p.dz][n-1];
+  if(rows.length===1&&rows[0].length===1&&rows[0][0][0]==='grid')
+    return `<div class="doc9">${gridPage(p,rows[0][0][1])}</div>`;
+  const dis=p.sub?' disabled':'';
+  const html=rows.map(r=>{
+    if(r[0][0]==='sec')return `<div class="d9s2">${esc(r[0][1])}</div>`;
+    if(r[0][0]==='n')return `<div class="d9n">${esc(r[0][1])}</div>`;
+    const hasStar=r.some(x=>x[0]==='t'&&/＊/.test(x[1]));
+    return `<div class="frw">`+r.map(tk=>{
+      const [ty,k]=tk;
+      if(ty==='t')return `<span class="fl">${esc(k).replace(/＊/g,'<b class="rq">＊</b>')}</span>`;
+      if(ty==='n')return `<span class="d9n">${esc(k)}</span>`;
+      if(ty==='i')return `<span class="fi" id="fr-${k}"><input style="width:${tk[2]}px"${dis}
+        value="${esc(p.sheet[k]||'')}" oninput="ST.cur.sheet['${k}']=this.value"></span>${tk[3]===1&&!hasStar?'<b class="rq">*</b>':''}`;
+      if(ty==='c')return `<span class="fck${p.sheet[k]?' on':''}" onclick="togF('${k}')"></span>`;
+      if(ty==='s'){const v=p.sheet[k]||'';
+        return `<span class="sg2" id="fr-${k}">${tk[2].map(o=>
+          `<button class="${v===o?'on':''}" onclick="setF('${k}','${o}')">${esc(o)}</button>`).join('')}</span>`
+          +(tk[3]===1&&!hasStar?'<b class="rq">*</b>':'');}
+      return '';
+    }).join('')+`</div>`;
+  }).join('');
+  return `<div class="doc9"><div class="d9h">스마트의료지도 구급대원 ${p.dz} 기록지 <span class="d9v">Ver 7.0</span></div>
+    ${html}</div>`;
 }
-function setF(k,v){if(ST.cur.sub)return;ST.cur.sheet[k]=v;drawRec();}
+function togF(k){if(ST.cur.sub)return;ST.cur.sheet[k]=ST.cur.sheet[k]?'':'1';drawRec();}
+function setF(k,v){if(ST.cur.sub)return;ST.cur.sheet[k]=ST.cur.sheet[k]===v?'':v;drawRec();}
+
+/* 시간별 상황기록 격자 — 실제 앱 열 구성 */
+const GTOG=[['contact','환자접촉']],
+ GNUM=[['bp','혈압'],['hr','맥박'],['rr','호흡'],['bt','체온'],['spo2','SPO2'],['bst','BST']],
+ GRHY=[['asys','Asystole'],['pea','PEA'],['vf','VF'],['vt','VT']],
+ GEND=[['etco2','ETCO2','n'],['igel','i-gel/LT','c'],['ett','기관내삽관','c'],['amio','Amio투여','c'],
+   ['lido','Lidocaine','c'],['epi','Epi 투여','c'],['iv','IV','c'],['io','IO','c'],
+   ['def','제세동','c'],['rosc','ROSC','c']];
+let GZ=1;
+function gsync(p){
+  const num={'혈압':'bp','맥박':'hr','호흡':'rr','체온':'bt','SPO2':'spo2','BST':'bst','ETCO2':'etco2'};
+  const tog={'환자접촉':'contact','i-gel/LT':'igel','제세동':'def','ROSC':'rosc'};
+  const rhy={'Asystole':'asys','PEA':'pea','VF':'vf','VT':'vt'};
+  const drg={'Epi투여':'epi','Amio투여':'amio','Lidocaine':'lido'};
+  p.grid=p.grid||{};
+  p.tr.filter(t=>!t.sys).forEach(t=>{
+    const m=String(t.full||'').slice(3,5);if(!m)return;
+    if(num[t.k]&&t.v&&!p.grid[m+':'+num[t.k]])p.grid[m+':'+num[t.k]]=t.v;
+    if(tog[t.k])p.grid[m+':'+tog[t.k]]=1;
+    if(t.k==='IV/IO')p.grid[m+':iv']=1;
+    if(t.k==='리듬입력'&&rhy[t.v])p.grid[m+':'+rhy[t.v]]=1;
+    if(t.k==='약물투여입력'&&drg[t.v])p.grid[m+':'+drg[t.v]]=1;
+  });
+}
+function gridPage(p,half){
+  gsync(p);const g=p.grid,d=p.sub?' disabled':'',a=half*30,b=a+30;
+  const cell=(m,k,l,ty)=>ty==='c'
+    ? `<td class="gc${g[m+':'+k]?' on':''}" onclick="gtog('${m}','${k}')">${esc(l)}</td>`
+    : `<td><input class="gi" value="${esc(g[m+':'+k]||'')}"${d} oninput="gset('${m}','${k}',this.value)"></td>`;
+  let body='';
+  for(let i=a;i<b;i++){const m=p2(i);
+    body+=`<tr><th class="gm">${m}</th>`
+      +cell(m,'contact','접촉','c')
+      +GNUM.map(([k])=>cell(m,k,'','n')).join('')
+      +GRHY.map(([k,l])=>cell(m,k,l.slice(0,4),'c')).join('')
+      +GEND.map(([k,l,ty])=>cell(m,k,l.length>5?l.slice(0,4):l,ty)).join('')
+      +'</tr>';}
+  const vt=t=>`<span class="gv">${esc(t)}</span>`;
+  return `<div class="d9g">시간별 상황 기록(경과시간이 아닌 "실제시간,분"에 체크하시면 됩니다.) - ${half+1}/2</div>
+    <div class="gzoom">표 크기 <button onclick="GZ=Math.max(.6,GZ-.15);drawRec()">－</button>
+      <button onclick="GZ=Math.min(2,GZ+.15);drawRec()">＋</button>
+      <button onclick="GZ=1;drawRec()">100%</button></div>
+    <div class="gwrap"><table class="grid" style="font-size:${(8.5*GZ).toFixed(1)}px">
+      <tr><th class="gm" rowspan="2">${vt('시간(분)')}</th><th rowspan="2">${vt('환자접촉')}</th>
+        <th colspan="4">활력징후</th>
+        ${['SPO2','BST'].map(x=>`<th rowspan="2">${vt(x)}</th>`).join('')}
+        ${GRHY.map(([,l])=>`<th rowspan="2">${vt(l)}</th>`).join('')}
+        ${GEND.map(([,l])=>`<th rowspan="2">${vt(l)}</th>`).join('')}</tr>
+      <tr>${['혈압','맥박','호흡','체온'].map(x=>`<th>${vt(x)}</th>`).join('')}</tr>
+      ${body}</table></div>`;
+}
+function gtog(m,k){if(ST.cur.sub)return;const g=ST.cur.grid=ST.cur.grid||{};
+  g[m+':'+k]?delete g[m+':'+k]:g[m+':'+k]=1;drawRec();}
+function gset(m,k,v){const g=ST.cur.grid=ST.cur.grid||{};v?g[m+':'+k]=v:delete g[m+':'+k];}
+
 function submitSheet(){
   const p=ST.cur;let miss=[];
-  PAGES[p.dz].forEach(([t,fs],pi)=>{if(!fs)return;
-    fs.forEach(f=>{if((f[3]===1||f[4]===1)&&!p.sheet[f[0]])miss.push([pi+1,f[1],f[0]]);});});
+  PAGES[p.dz].forEach(([t,rows],pi)=>{
+    let sec='';
+    rows.forEach(r=>{if(r[0][0]==='sec')sec=r[0][1];r.forEach(tk=>{
+      const ty=tk[0],k=tk[1];
+      if(ty!=='i'&&ty!=='s')return;
+      const req=(ty==='i'&&tk[3]===1)||(ty==='s'&&tk[3]===1);
+      if(req&&!p.sheet[k]){
+        const lab=(ty==='s')?(r.find(x=>x[0]==='t')||[,k])[1]:(r.find(x=>x[0]==='t')||[,k])[1];
+        let nm=String(lab).replace(/[＊*:●→]/g,'').trim();
+        if(sec&&nm.length<5&&!nm.includes(sec))nm=sec+' '+nm;
+        miss.push([pi+1,nm,k]);
+      }
+    });});
+  });
   if(miss.length){
     const w=document.createElement('div');
-    w.innerHTML=`<div style="font-size:12.5px;color:var(--red);line-height:1.8">
-      ${miss.slice(0,10).map(m=>`· ${m[0]}p ${m[1]}`).join('<br>')}${miss.length>10?'<br>…':''}</div>`;
-    pop('필수 입력 안내',w,[['해당 페이지로',()=>{popClose();PAGE=miss[0][0];drawRec();
-      setTimeout(()=>$('fr-'+miss[0][2])?.classList.add('miss'),60);}],['닫기',popClose,1]],
-      '필수 입력 항목 중 미입력한 항목이 있습니다.');
+    w.innerHTML=`<div style="font-size:12.5px;color:#4A4A52;line-height:1.7;text-align:center">
+      [${miss[0][0]}페이지]로 이동하여 입력하시겠습니까?<br><br>누락된 항목:
+      <div style="color:var(--red);margin-top:4px">
+      ${miss.slice(0,10).map(m=>`· ${m[1]}`).join('<br>')}${miss.length>10?'<br>…':''}</div></div>`;
+    pop('필수 입력 안내',w,[['이동',()=>{popClose();PAGE=miss[0][0];drawRec();
+      setTimeout(()=>$('fr-'+miss[0][2])?.classList.add('miss'),60);}],['아니요',popClose,1]],
+      '필수 입력 항목이 누락되었습니다.');
     return;
   }
-  confirmPop('제출 확인','구급 대원 기록지 작성을 완료하였습니까?',()=>{
+  confirmPop('제출 확인','구급대 기록지 작성을 완료하시겠습니까?',()=>{
     p.sub=true;p.emtLog='제출완료';if(p.stt==='이송완료')p.stt='최종완료';
     drawRec();success('구급대원 일지가 제출되었습니다.');});
 }
