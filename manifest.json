@@ -1,0 +1,15 @@
+{
+  "name": "SALS 스마트의료지도 훈련용",
+  "short_name": "SALS 훈련",
+  "description": "구급대원 영상 의료지도 훈련용 화면. 실제 시스템에 연결되지 않습니다.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#E4032E",
+  "lang": "ko",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
